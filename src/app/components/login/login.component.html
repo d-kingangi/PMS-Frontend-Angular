@@ -1,1 +1,27 @@
-<p>login works!</p>
+<app-navbar></app-navbar>
+
+<div class="loginForm">
+    <div class="logo"><h3>PMS projects</h3></div>
+    <form  [formGroup]="loginForm" class="login">
+        <div><h3>{{title}}</h3></div>
+        <div class="uName">
+            <label for="email">Email</label><br>
+            <input type="email" formControlName="email" placeholder="Enter Your email">
+            <div *ngIf="loginForm.get('email')?.invalid && !loginForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]">This is Required</div><br>
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]">Invalid Format</div>
+        </div>  
+        <div class="pd">
+            <label for="loginPwd">Password</label><br>
+            <input type="password" formControlName="password"><br>
+            <div *ngIf="loginForm.get('location')?.invalid && loginForm.get('location')?.touched" class="tex-sm text-red-500 mt-[3px]">Please Input Password!!!</div>           
+            <a routerLink="/forgotPassword">Forgot password?</a><br>
+        </div> 
+        <div class="loginBtn">
+            <input type="submit" [disabled]="loginForm.invalid" value="Login" id=""><br>
+            <a routerLink="/registration">Don't have an account? <span id="" >Register</span></a>
+        </div>
+    </form>
+</div>
+<div class="welcome"> 
+    <img src="https://cdn.pixabay.com/photo/2016/06/14/08/47/woman-1455991_640.png" alt="">
+</div>    
