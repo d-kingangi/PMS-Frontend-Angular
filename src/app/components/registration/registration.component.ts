@@ -12,8 +12,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.css'
 })
+
 export class RegistrationComponent {
     title = 'Register Here' 
 
-  
+    registerUser(details:users){
+     console.log(details);
+     
+    }
 }
